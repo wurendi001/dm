@@ -1,5 +1,6 @@
 <p align="center">
-<a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub .com%2Fwurendi001%2Fdm&count_bg=%2345C83D&title_bg=%23DAC806&icon=saltstack.svg&icon_color=%2315CDBE&title=%E7%BB%9F%E8%AE%A1&edge_flat=false"/></a>
+<a href="https://hits.seeyoufarm.com"><img src="https://https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fwurendi001%2Fdm&count_bg=%233DBAC8&title_bg=%230456EF&icon=storybook.svg&icon_color=%23FA0086&title=%E8%AE%BF%E9%97%AE%E7%BB%9F%E8%AE%A1&edge_flat=false"/></a>
+<a href="/LICENSE"><img src="https://www.kehu33.asia/" alt="license" /></a>  
 </p>
 <h1>翻墙软件下载<h1>
 <p>请大家根据使用的系统下载对应的软件，主流的翻墙软件是V2ray、Clash、Shadowrocket<br>
