@@ -1,7 +1,7 @@
 #DM
 科学上网软件下载以及搭建代码⏬
 <p align="center">
-<a href="https://hits.seeyoufarm.com"><img src="[https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub .com%2Fwurendi001%2Fdm&count_bg=%233DBAC8&title_bg=%230456EF&icon=storybook.svg&icon_color=%23FA0086&title=%E8%AE%BF%E9%97%AE%E7%BB%9F%E8%AE%A1&edge_flat=false](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fwurendi001%2Fshell&count_bg=%233DC88D&title_bg=%23AE1818&icon=openstack.svg&icon_color=%23E7E7E7&title=%%20E8%BF%90%E8%A1%8C&edge_flat=true)"/>< /a>
+<a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub .com%2Fwurendi001%2Fdm&count_bg=%233DBAC8&title_bg=%230456EF&icon=storybook.svg&icon_color=%23FA0086&title=%E8%AE%BF%E9%97%AE%E7%BB%9F%E8%AE%A1&edge_flat=false](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fwurendi001%2Fshell&count_bg=%233DC88D&title_bg=%23AE1818&icon=openstack.svg&icon_color=%23E7E7E7&title=%%20E8%BF%90%E8%A1%8C&edge_flat=true"/>< /a>
 </p>
 <h1 align="center"> 𝐇𝐢  👋, 𝐈'𝐦 失落的梦. </h1>
 <h1>欢迎访问：⬇️<h1>
