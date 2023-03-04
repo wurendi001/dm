@@ -300,7 +300,7 @@ getData() {
 		echo "   1) 静态网站：小白不建议使用这个(位于/usr/share/nginx/html)"
 		echo "   2) 作者随机填的几个站(随机选择一个)"
 		echo "   3) 高清壁纸站(https://bing.ioliu.cn)"
-		echo "   4) 奇峰网址(https://agent.oridc.com)(默认)"		
+		echo "   4) 奇峰网址(https://agent.oridc.com)(强烈推荐使用)"		
 		echo "   5) 自定义反代站点(需以http或者https开头)"
 		read -p "  请选择伪装网站类型[默认:4.奇峰网站]" answer
 		if [[ -z "$answer" ]]; then
@@ -1487,6 +1487,7 @@ outputTrojan() {
 		echo -e "   ${BLUE}加密(encryption)：${PLAIN} ${RED}none${PLAIN}"
 		echo -e "   ${BLUE}传输协议(network)：${PLAIN} ${RED}${network}${PLAIN}"
 		echo -e "   ${BLUE}底层安全传输(tls)：${PLAIN}${RED}XTLS${PLAIN}"
+
 	else
 		echo -e "   ${BLUE}IP/域名(address): ${PLAIN} ${RED}${domain}${PLAIN}"
 		echo -e "   ${BLUE}端口(port)：${PLAIN}${RED}${port}${PLAIN}"
@@ -1546,6 +1547,8 @@ outputVmessWS() {
 	echo -e "   ${BLUE}伪装域名/主机名(host)/SNI/peer名称：${PLAIN}${RED}${domain}${PLAIN}"
 	echo -e "   ${BLUE}路径(path)：${PLAIN}${RED}${wspath}${PLAIN}"
 	echo -e "   ${BLUE}底层安全传输(tls)：${PLAIN}${RED}TLS${PLAIN}"
+}
+
 showInfo() {
 	res=$(status)
 	if [[ $res -lt 2 ]]; then
@@ -1557,7 +1560,7 @@ showInfo() {
 	echo -n -e " ${BLUE}Xray运行状态：${PLAIN}"
 	statusText
 	echo -e " ${BLUE}Xray配置文件: ${PLAIN} ${RED}${CONFIG_FILE}${PLAIN}"
-	colorEcho $BLUE " Xray配置信息： "
+	colorEcho $BLUE " Xray配置信息：${PLAIN} ${RED}${IP}${PLAIN}"
 
 	getConfigFileInfo
 
@@ -1598,7 +1601,7 @@ showInfo() {
 			echo -e " ${BLUE}传输协议(network)：${PLAIN} ${RED}${network}${PLAIN}"
 			echo -e " ${BLUE}伪装类型(type)：${PLAIN}${RED}none$PLAIN"
 			echo -e " ${BLUE}伪装域名/主机名(host)/SNI/peer名称：${PLAIN}${RED}${domain}${PLAIN}"
-			echo -e " ${BLUE}底层安全传输(tls)：${PLAIN}${RED}TLS${PLAIN}"
+			echo -e " ${BLUE}底层安全传输(tls)：${PLAIN}${RED}XTLS${PLAIN}"
 		elif [[ "$ws" == "false" ]]; then
 			echo -e " ${BLUE}IP(address):  ${PLAIN}${RED}${IP}${PLAIN}"
 			echo -e " ${BLUE}端口(port)：${PLAIN}${RED}${port}${PLAIN}"
@@ -1623,6 +1626,7 @@ showInfo() {
 		fi
 	fi
 }
+
 showLog() {
 	res=$(status)
 	[[ $res -lt 2 ]] && colorEcho $RED " Xray未安装，请先安装！" && return
@@ -1631,7 +1635,7 @@ showLog() {
 
 menu() {
 	clear
-	echo "################################### 免费版 ###################################################"
+	echo "########################################################################################################################"
 	echo -e "#                     ${RED}Xray一键安装脚本${PLAIN} "
 	echo -e "#${GREEN}作者${PLAIN}: 失落的梦              "              
 	echo -e "# ${GREEN}博客1${PLAIN}:https://www.kehu33.asia    "
@@ -1639,7 +1643,7 @@ menu() {
 	echo -e "# ${GREEN}微信${PLAIN}: Falltoher-1314    "
 	echo -e "# ${GREEN} qq${PLAIN}: 1150315739  "
 	echo -e "# ${GREEN} $YouTube{PLAIN}: https://www.youtube.com/channel/UCmteg7BSPK8pTFvKAlkBoEw     "	
-	echo "##############################################################################################"
+	echo "##########################################################################################################################"
 	echo " —————————————————————————————————————————安装协议选项———————————————————————————————"
 	echo -e "  ${GREEN}1.${PLAIN}   安装Xray-VMESS"
 	echo -e "  ${GREEN}2.${PLAIN}   安装Xray-${BLUE}VMESS+mKCP"
