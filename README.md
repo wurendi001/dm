@@ -15,6 +15,10 @@
     bash <(curl -s -L https://raw.githubusercontent.com/wurendi001/dm/main/xr2.sh)
 ```
 
+```bash
+    bash <(curl -s -L https://raw.githubusercontent.com/wurendi001/dm/main/trojan_v2ray.sh.sh)
+```
+
 </p>
 <h1>翻墙软件下载<h1>
 <p>请大家根据使用的系统下载对应的软件，主流的翻墙软件是V2ray、Clash、Shadowrocket<br>
