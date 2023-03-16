@@ -353,12 +353,6 @@ getData() {
 			ALLOW_SPIDER="n"
 		fi
 		colorEcho $BLUE " 允许搜索引擎：$ALLOW_SPIDER"
-	fi
-	echo ""
-	read -p " 是否安装BBR(默认安装)?[y/n]:" NEED_BBR
-	[[ -z "$NEED_BBR" ]] && NEED_BBR=y
-	[[ "$NEED_BBR" == "Y" ]] && NEED_BBR=y
-	colorEcho $BLUE " 安装BBR：$NEED_BBR"
 }
 
 installNginx() {
