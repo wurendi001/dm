@@ -699,7 +699,6 @@ installBBR() {
 	sysctl -p
     cd .. && rm -rf bbrmod
 	echo -e "${Info}魔改版BBR启动成功！"
-     fi
 }
 
 installXray() {
