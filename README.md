@@ -17,7 +17,7 @@
 <h1>综合全部搭建代码：⬇️<h1>
   
 ```bash
-    bash <(curl -s -L https://raw.githubusercontent.com/wurendi001/dm/main/trojan_v2ray.sh.sh)
+    bash <(curl -s -L https://raw.githubusercontent.com/wurendi001/shell/main/sm.sh)
 ```
 
 </p>
