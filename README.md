@@ -20,7 +20,7 @@
   <h1>新代码2⬇<h1> 
  
  ```2
- wget -O Xray-TLS+Web-setup.sh https://raw.githubusercontent.com/wurendi001/x-ui/main/Xray-TLS%2BWeb-setup.sh&&bash Xray-TLS+Web-setup.sh           
+ wget -O Xray-TLS+Web-setup.sh https://raw.githubusercontent.com/wurendi001/x-ui/main/Xray-TLS%2BWeb-setup.sh&&bash Xray-TLS+Web-setup.sh
 ```
   
 <h1>综合代码里没有最新代码<h1>
