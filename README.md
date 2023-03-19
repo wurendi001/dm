@@ -12,16 +12,17 @@
 <h1>搭建代码：⬇️<h1>
 
 <h1>最新研究出来的代码：⬇<h1>
-```
+
+ ```
 bash <(curl -s -L https://raw.githubusercontent.com/wurendi001/x-ui/main/xray-yes.sh)
 ```
  
-  综合代码里没有最新代码
+<h1>综合代码里没有最新代码<h1>
 
 <h1>综合全部搭建代码：⬇️<h1>
   
 ```
-    bash <(curl -s -L https://raw.githubusercontent.com/wurendi001/shell/main/sm.sh)
+bash <(curl -s -L https://raw.githubusercontent.com/wurendi001/shell/main/sm.sh)
 ```
 </p>
 <h1>翻墙软件下载：<h1>
