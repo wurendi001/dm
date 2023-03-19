@@ -11,16 +11,16 @@
 
 <h1>搭建代码：⬇️<h1>
 
-<h1>最新研究出来的代码：⬇<h1>
+  <h1>新代码1⬇<h1> 
 
  ```1
-1. bash <(curl -s -L https://raw.githubusercontent.com/wurendi001/x-ui/main/xray-yes.sh)
+ bash <(curl -s -L https://raw.githubusercontent.com/wurendi001/x-ui/main/xray-yes.sh)
 ```
 
-  ====================================================
+  <h1>新代码2⬇<h1> 
  
  ```2
-2. wget -O Xray-TLS+Web-setup.sh https://raw.githubusercontent.com/wurendi001/x-ui/main/Xray-TLS%2BWeb-setup.sh&&bash Xray-TLS+Web-setup.sh           
+ wget -O Xray-TLS+Web-setup.sh https://raw.githubusercontent.com/wurendi001/x-ui/main/Xray-TLS%2BWeb-setup.sh&&bash Xray-TLS+Web-setup.sh           
 ```
   
 <h1>综合代码里没有最新代码<h1>
