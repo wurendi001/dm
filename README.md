@@ -14,13 +14,13 @@
 <h1>最新研究出来的代码：⬇<h1>
 
  ```1
-bash <(curl -s -L https://raw.githubusercontent.com/wurendi001/x-ui/main/xray-yes.sh)
+1. bash <(curl -s -L https://raw.githubusercontent.com/wurendi001/x-ui/main/xray-yes.sh)
 ```
 
-  =====================================================================================================
+  ====================================================
  
  ```2
- wget -O Xray-TLS+Web-setup.sh https://raw.githubusercontent.com/wurendi001/x-ui/main/Xray-TLS%2BWeb-setup.sh&&bash Xray-TLS+Web-setup.sh           
+2. wget -O Xray-TLS+Web-setup.sh https://raw.githubusercontent.com/wurendi001/x-ui/main/Xray-TLS%2BWeb-setup.sh&&bash Xray-TLS+Web-setup.sh           
 ```
   
 <h1>综合代码里没有最新代码<h1>
