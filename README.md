@@ -15,11 +15,12 @@
 ```
 bash <(curl -s -L https://raw.githubusercontent.com/wurendi001/x-ui/main/xray-yes.sh)
 ```
-综合代码里没有最新代码
+ 
+  综合代码里没有最新代码
 
 <h1>综合全部搭建代码：⬇️<h1>
   
-```bash
+```
     bash <(curl -s -L https://raw.githubusercontent.com/wurendi001/shell/main/sm.sh)
 ```
 </p>
