@@ -1,4 +1,4 @@
-#! /bin/bash
+﻿#! /bin/bash
 # 失落的梦 
 #https://www.kehu33.asia/
 #production time：2023.1.12
@@ -245,43 +245,43 @@ bash <(curl -s -L https://gitlab.com/shell00/sldm/-/raw/main/trojan-go.sh)
 #========================================================
 #主菜单
 function start_menu(){
-    yum update -y && yum install -y curl && yum install -y socat && yum install wget -y
-    apt update -y && apt install -y curl && apt install -y socat && apt install wget -y
+    #yum update -y && yum install -y curl && yum install -y socat && yum install wget -y
+    #apt update -y && apt install -y curl && apt install -y socat && apt install wget -y
     clear
     yellow " ================================== 收费脚本项目描述内容 ============================ "
     purple " 作者： 失落的梦常用综合脚本包 一键安装脚本${PLAIN}"
     purple " 联系微信：Falltoher-1314   QQ:1150315739  "
     purple " 导航站：https://www.meng666.buzz  博客1：https://www.kehu33.asia "
     red " ================================= 搭建，科学上网工具 =============================== "
-    blue " 00.【 BBR加速V1一键脚本 】	        ||      99.【 BBRS加速V2一键脚本 】推荐"
+    blue " 00.【 BBR加速V1一键脚本 】		||	99.【 BBRS加速V2一键脚本 】推荐"
     blue " 1.【 Xray一键安装脚本】		||	2.【 Xray 另外一个一键安装脚本 】"   
     blue " 3.【 v2ray一键安装脚本 】		||	4.【 trojan一键安装脚本 】"
-    blue " 5.【 trojan-go一键安装脚本 】	||	6.【 八合一共存一键脚本 】"
-    blue " 7.【 bing v2ray一键脚本 】	         ||      8.【 233boy V2Ray一键安装脚本 】"
-    blue " 9.【 x-ui一键脚本】		 ||	10.【 SSR V1一键脚本 】"
-    blue " 11.【 SSR V2一键脚本 】		 ||     12.【  SK5协议一键脚本 】"
-    blue " 13.【 naiveproxy一键脚本 】	 ||	14.【trojan面板V1一键脚本】"
-    blue " 15.【trojan面板V2一键脚本 】	        ||     16.【宝塔面板免验证(中文破解版) 推荐】"     
+    blue " 5.【 trojan-go一键安装脚本 】		||	6.【 八合一共存一键脚本 】"
+    blue " 7.【 bing v2ray一键脚本 】		||	8.【 233boy V2Ray一键安装脚本 】"
+    blue " 9.【 x-ui一键脚本】			||	10.【 SSR V1一键脚本 】"
+    blue " 11.【 SSR V2一键脚本 】		||	12.【  SK5协议一键脚本 】"
+    blue " 13.【 naiveproxy一键脚本】		||	14.【trojan面板V1一键脚本】"
+    blue " 15.【trojan面板V2一键脚本】		||	16.【宝塔面板免验证(中文破解版) 推荐】"     
     blue " ==================================中转，服务器流量中转 =============================== "
     blue " 17. 【iptables 中转】			||	18. 【socat 中转 支持deban系】"
-    blue " 19. 【tinymapper 中转】		        ||	20. 【gost 一键中转】"     
-    blue " 21. 【Echo隧道中转 便携脚本】		    ||	    22. 【Ehco隧道一键中转】"
-    blue " 23. 【brooks 一键中转】		       ||      24. 【咸蛋中转机面板 一键脚本】"
-    blue " 25. 【极光中转机面板 一键脚本】		  ||      26.                                      "   
+    blue " 19. 【tinymapper 中转】		||	20. 【gost 一键中转】"     
+    blue " 21. 【Echo隧道中转 便携脚本】		||	22. 【Ehco隧道一键中转】"
+    blue " 23. 【brooks 一键中转】		||	24. 【咸蛋中转机面板 一键脚本】"
+    blue " 25. 【极光中转机面板 一键脚本】 "        
     purple " ================================= 检查，服务器功能检查 =============================== "
-    purple " 26. 【检测IP是否解锁tiktok】	       ||	27. 【查看IP归属那个国家】"
+    purple " 26. 【检测IP是否解锁tiktok】		||	27. 【查看IP归属那个国家】"
     purple " 28. 【Lemonbench 综合测试】		||	29. 【三网Speedtest测速】"
-    purple " 30. 【回程路由追踪】		       ||	31. 【获取本机IP】"
-    purple " 32. 【流媒体解锁测试】		      ||	33. 【检测/诊断Youtube地域】"
+    purple " 30. 【回程路由追踪】			||	31. 【获取本机IP】"
+    purple " 32. 【流媒体解锁测试】			||	33. 【检测/诊断Youtube地域】"
     yello " ================================== 配置，服务器功能配置 =============================== "
-    yello " 34.【ipv4/6优先级调整】		   ||      35.【VPS内存日志自动清理】"
-    yello " 36.【Linux_tcp网络优化 一键脚本】	 ||	 37.【 BBR加速端口 一键安装脚本】"
-    yello " 38.【 一键修改root密码】		  ||      39.【tiktok”无人值守循环推流直播搭建】 "
-    yello " 40.【 域名ip证书 一键申请脚本】		||      41.【 WARP 一键安装脚本】"
+    yello " 34.【ipv4/6优先级调整】		||	35.【VPS内存日志自动清理】"
+    yello " 36.【Linux_tcp网络优化 一键脚本】	||	37.【 BBR加速端口 一键安装脚本】"
+    yello " 38.【 一键修改root密码】		||	39.【tiktok”无人值守循环推流直播搭建】 "
+    yello " 40.【 域名ip证书 一键申请脚本】	||	41.【 WARP 一键安装脚本】"
     yello " 42.【 开启SSH登陆+替换ROOT密钥登陆】	||	43.【 修改SSH 端口默认22，或厂家给的默认的端口 】"
-    yello " 44.【 域名ip证书续签 一键脚本】	        ||      45.【 欺诈分数以及IP质量检测 一件代码】"
-    yello " 46.【 nginx安装 一键代码】		  ||       47.【 nginx安装第二种 一键代码】"
-    yello " 48.【 在线Linux系统 一键从装】         ||	  49.【 开放所有端口+同步时间+更新系统组件+测速+关闭Iptable规则】"
+    yello " 44.【 域名ip证书续签 一键脚本】	||	45.【 欺诈分数以及IP质量检测 一件代码】"
+    yello " 46.【 nginx安装 一键代码】		||	47.【 nginx安装第二种 一键代码】"
+    yello " 48.【 在线Linux系统 一键从装】		||	49.【 开放所有端口+同步时间+更新系统组件+测速+关闭Iptable规则】"
     yellow " =============================================================================================================== "   
     blue "     ** 使用时间: $(date)"
     yellow " =============================================================================================================== "
