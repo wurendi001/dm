@@ -9,21 +9,11 @@
 <p><a href="https://www.kehu33.asia/">[我的网站]</a></p>
 </p>
 
+<h1>通知：免费版代码最后一次维护以后只维护收费版，免费版有任何问题自行解决1>
+<h1>通知：免费版代码最后一次维护以后只维护收费版，免费版有任何问题自行解决1>
+<h1>通知；免费版代码最后一次维护以后只维护收费版，免费版有任何问题自行解决1>
+
 <h1>搭建代码：⬇️<h1>
-
-  <h1>新代码1⬇<h1> 
-
- ```1
- bash <(curl -s -L https://raw.githubusercontent.com/wurendi001/x-ui/main/xray-yes.sh)
-```
-
-  <h1>新代码2⬇<h1> 
- 
- ```2
- wget -O Xray-TLS+Web-setup.sh https://raw.githubusercontent.com/wurendi001/x-ui/main/Xray-TLS%2BWeb-setup.sh&&bash Xray-TLS+Web-setup.sh
-```
-  
-<h1>综合代码里没有最新代码<h1>
 
 <h1>综合全部搭建代码：⬇️<h1>
   
