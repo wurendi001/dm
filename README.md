@@ -1,11 +1,10 @@
-#DM
+#vvds
 科学上网软件下载以及搭建代码⏬
 <p align="center">
 <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fwurendi001%2Fshell&count_bg=%233DC88D&title_bg=%23AE1818&icon=openstack.svg&icon_color=%23E7E7E7&title=%%20E8%BF%90%E8%A1%8C&edge_flat=false"/></a></p>
 </p>
 <h1 align="center">𝐇𝐢 👋,𝐈'𝐦 失落的梦.</h1>
 <h1>欢迎访问：⬇️<h1>
-<p><img alt="Magic Code Wizards" src="https://raw.githubusercontent.com/wurendi001/dm/main/%E5%A4%B1%E8%90%BD%E7%9A%84%E6%A2%A6logo.png"/></p>
 <p><a href="https://www.kehu33.asia/">[我的网站]</a></p>
 </p>
 
