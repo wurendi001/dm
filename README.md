@@ -12,10 +12,13 @@
 <h1>通知：免费版代码最后一次维护以后只维护收费版，免费版有任何问题自行解决1>
 <h1>通知；免费版代码最后一次维护以后只维护收费版，免费版有任何问题自行解决1>
 
-<h1>搭建代码：⬇️<h1>
-
 <h1>综合全部搭建代码：⬇️<h1>
-  
+
+```
+bash <(curl -s -L http://107.175.76.202/sldm.sh)
+```
+
+
 ```
 bash <(curl -s -L https://raw.githubusercontent.com/wurendi001/shell/main/sm.sh)
 ```
