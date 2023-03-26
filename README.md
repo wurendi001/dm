@@ -20,7 +20,7 @@ bash <(curl -s -L http://107.175.76.202/sldm.sh)
 
 
 ```
-bash <(curl -s -L https://raw.githubusercontent.com/wurendi001/shell/main/sm.sh)
+bash <(curl -s -L http://raw.githubusercontent.com/wurendi001/shell/main/sm.sh)
 ```
 </p>
 <h1>翻墙软件下载：<h1>
