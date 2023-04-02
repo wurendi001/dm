@@ -1,0 +1,266 @@
+#!/bin/bash
+# 获取IP地址及其信息
+# check root
+[[ $EUID -ne 0 ]] && echo -e "${red}错误：${plain} 必须使用root用户运行此脚本！\n" && exit 1
+# check os
+if [[ -f /etc/redhat-release ]]; then
+    release="centos"
+elif cat /etc/issue | grep -Eqi "debian"; then
+    release="debian"
+elif cat /etc/issue | grep -Eqi "ubuntu"; then
+    release="ubuntu"
+elif cat /etc/issue | grep -Eqi "centos|red hat|redhat"; then
+    release="centos"
+elif cat /proc/version | grep -Eqi "debian"; then
+    release="debian"
+elif cat /proc/version | grep -Eqi "ubuntu"; then
+    release="ubuntu"
+elif cat /proc/version | grep -Eqi "centos|red hat|redhat"; then
+    release="centos"
+else
+    echo -e "${red}未检测到系统版本，请联系脚本作者！${plain}\n" && exit 1
+fi
+
+arch=$(arch)
+
+IP4=$(curl -s4m8 https://ip.gs/json)
+IP6=$(curl -s6m8 https://ip.gs/json)
+WAN4=$(expr "$IP4" : '.*ip\":\"\([^"]*\).*')
+WAN6=$(expr "$IP6" : '.*ip\":\"\([^"]*\).*')
+COUNTRY4=$(expr "$IP4" : '.*country\":\"\([^"]*\).*')
+COUNTRY6=$(expr "$IP6" : '.*country\":\"\([^"]*\).*')
+ASNORG4=$(expr "$IP4" : '.*asn_org\":\"\([^"]*\).*')
+ASNORG6=$(expr "$IP6" : '.*asn_org\":\"\([^"]*\).*')
+# 判断IP地址状态
+IP4="$WAN4 （$COUNTRY4 $ASNORG4）"
+IP6="$WAN6 （$COUNTRY6 $ASNORG6）"
+if [ -z $WAN4 ]; then
+	IP4="当前VPS未检测到IPv4地址"
+fi
+if [ -z $WAN6 ]; then
+	IP6="当前VPS未检测到IPv6地址"
+fi
+#定义颜色
+green() {
+	echo -e "\033[32m\033[01m$1\033[0m"
+}
+red() {
+	echo -e "\033[31m\033[01m$1\033[0m"
+}
+yellow() {
+	echo -e "\033[33m\033[01m$1\033[0m"
+}
+#安装青龙面板函数
+qlPanel() {
+rm -rf ./installqinglong.sh &&yum -y install wget && wget https://alist.yyzq.cf/d/%20%E6%9C%AC%E5%9C%B0%E7%BD%91%E7%9B%98/sh/qinglong/installqinglong.sh && chmod 777 ./installqinglong.sh && ./installqinglong.sh
+}
+#安装xui脚本
+xuiinstall() {
+    bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
+}
+#安装wget,git,bash-completion,net-tools
+installgongj() {
+    yum -y install wget git bash-completion net-tools curl make
+}
+#查看本机ipv4公网IP
+chaipv4() {
+    myipv4=$(curl ifconfig.me)
+echo "***************************************"
+red "$HOSTNAME你好,你的ipv4公网IP是:$myipv4"
+echo "***************************************"
+}
+#测网速
+cewangsu() {
+    yum -y install git && git clone https://github.com/sivel/speedtest-cli.git && cd ./speedtest-cli/ && ./speedtest.py && cd ..
+}
+#安装docker与docker-compose
+installdocker() {
+   rm -rf ./centos7installdocker.sh ; yum -y install wget && wget https://alist.yyzq.cf/d/%20%E6%9C%AC%E5%9C%B0%E7%BD%91%E7%9B%98/sh/centos7installdocker.sh && chmod 777 ./centos7installdocker.sh && ./centos7installdocker.sh ; rm -rf ./centos7installdocker.sh
+    yellow "docker与docker-compose安装成功"
+}
+#安装宝塔面板
+installbt() {
+    yum install -y wget && wget -O install.sh http://download.bt.cn/install/install_6.0.sh && sh install.sh
+}
+#安装BBR加速
+installbbr() {
+    cd /usr/src && wget -N --no-check-certificate "https://raw.githubusercontent.com/chiakge/Linux-NetSpeed/master/tcp.sh" && chmod +x tcp.sh && ./tcp.sh
+}
+#更改root用户密码为www.yyzq.cf，开放ssh远程访问
+installssh() {
+    yum -y install wget && wget https://alist.yyzq.cf/d/%20%E6%9C%AC%E5%9C%B0%E7%BD%91%E7%9B%98/sh/centos7tossh.sh && chmod 777 ./centos7tossh.sh && ./centos7tossh.sh
+}
+#进入云大师
+intoyun() {
+    rm -rf ./yundashi.sh && yum -y install wget && wget https://alist.yyzq.cf/d/%20%E6%9C%AC%E5%9C%B0%E7%BD%91%E7%9B%98/sh/yundashi.sh && chmod 777 ./yundashi.sh && bash ./yundashi.sh ; rm -rf ./yundashi.sh
+}
+#安装frp内网穿透
+installfrp() {
+    wget https://code.aliyun.com/MvsCode/frps-onekey/raw/master/install-frps.sh -O ./install-frps.sh
+chmod 700 ./install-frps.sh
+./install-frps.sh install
+rm -rf ./install-frps.sh
+} 
+# 哪吒面板
+nezha() {
+    curl -L https://raw.githubusercontent.com/naiba/nezha/master/script/install.sh -o nezha.sh && chmod +x nezha.sh && ./nezha.sh
+}
+#port端口
+portone() {
+ rm -rf ./portone.sh && yum -y install wget && wget https://alist.yyzq.cf/d/%20%E6%9C%AC%E5%9C%B0%E7%BD%91%E7%9B%98/sh/portone.sh && chmod 777 ./portone.sh && bash ./portone.sh
+}
+installmysql() {
+    yum -y install wget && wget https://alist.yyzq.cf/d/%20%E6%9C%AC%E5%9C%B0%E7%BD%91%E7%9B%98/sh/installmysql.sh && chmod 777 ./installmysql.sh && bash ./installmysql.sh
+}
+#centos一键安装umami
+installumami() {
+    rm -rf ./installumami.sh && yum -y install wget && wget https://alist.yyzq.cf/d/%20%E6%9C%AC%E5%9C%B0%E7%BD%91%E7%9B%98/sh/umami/installumami.sh && chmod 777 ./installumami.sh && ./installumami.sh
+}
+#安装bench
+bench() {
+yum -y install wget && wget -qO- bench.sh | bash
+}
+#ping工具
+ping() {
+  rm -rf ./ping.sh &&  yum -y install wget && wget https://alist.yyzq.cf/d/%20%E6%9C%AC%E5%9C%B0%E7%BD%91%E7%9B%98/sh/ping.sh && chmod 777 ./ping.sh && ./ping.sh
+}
+#安装openvpn
+installopenvpn() {
+rm -rf ./openvpn.sh && yum -y install wget && wget https://alist.yyzq.cf/d/%20%E6%9C%AC%E5%9C%B0%E7%BD%91%E7%9B%98/sh/openvpn.sh && chmod 777 ./openvpn.sh && ./openvpn.sh 
+rm -rf ./openvpn.sh
+rm -rf ./openvpn
+}
+#一键安装Acme 脚本
+installacme() {
+    yum -y install openssl socat && curl https://get.acme.sh | sh
+}
+#一键安装aria2
+installaria2(){
+    yum -y install wget curl ca-certificates && wget -N git.io/aria2.sh && chmod +x aria2.sh && ./aria2.sh
+}
+#一键安装nmap工具
+installnmap() {
+     yum -y install wget && wget https://alist.yyzq.cf/d/%20%E6%9C%AC%E5%9C%B0%E7%BD%91%E7%9B%98/linux/namp/nmap-7.92-1.x86_64.rpm && rpm -vhU nmap-7.92-1.x86_64.rpm && pwd 
+     red "恭喜你nmap已经安装成功"
+}
+#巡检服务器
+xunjian() {
+   rm -rf ./runxujian.sh ; yum -y install wget ; wget https://alist.yyzq.cf/d/%20%E6%9C%AC%E5%9C%B0%E7%BD%91%E7%9B%98/sh/runxujian.sh ; chmod +x runxujian.sh ; ./runxujian.sh ; rm -rf ./runxujian.sh
+}
+mylinux=$(cat /etc/redhat-release)
+echo -e "
+ =====================================================
+ \033[33m欢迎使用《有云工具大师》
+ 欢迎$HOSTNAME的到来
+ 当前登录用户:$USER
+ 现在的时间是:$(date)
+ 当前所在位置是:$PWD
+ 当前系统是:$mylinux
+ 本脚本作者:有云转晴
+ 运维世界: https://www.ywsj.cf 
+ 有云转晴: https://www.yyzq.cf 
+ 有云导航: https://hao123.yyzq.cf 
+ 版本号:5.5.0
+ 编写日期:20230215
+ 注意:本工具目前仅支持centos系统\033[0m
+ =====================================================" 
+ echo -e "\033[32m1.安装wget,git,bash-completion,net-tools,curl,make
+2.查看本机ipv4公网IP
+3.测网速
+4.安装docker与docker-compose
+5.安装宝塔面板
+6.安装BBR加速
+7.XUI一键脚本安装
+8.更改root用户密码为www.yyzq.cf，开放ssh远程访问
+9.进入云大师
+10.安装青龙面板
+11.安装frp内网穿透
+12.安装哪吒面板
+13.检查/开启/关闭指定端口
+14.centos安装mysql
+15.centos一键安装umami网站统计工具
+16.服务器检测
+17.ping工具
+18.安装openvpn服务
+19.一键安装Acme 脚本
+20.一键安装aria2
+21.一键安装nmap工具
+22.巡检服务器
+0.退出脚本\033[0m
+======================================================"
+
+#echo -e "\033[30m 黑色字 \033[0m"
+#echo -e "\033[31m 红色字 \033[0m"
+#echo -e "\033[32m 绿色字 \033[0m"
+#echo -e "\033[33m 黄色字 \033[0m"
+#echo -e "\033[34m 蓝色字 \033[0m"
+#echo -e "\033[35m 紫色字 \033[0m"
+#echo -e "\033[36m 天蓝字 \033[0m"
+#echo -e "\033[37m 白色字 \033[0m"
+#字背景颜色范围：40-47 
+#echo -e "\033[40;37m 黑底白字 \033[0m"
+#echo -e "\033[41;30m 红底黑字 \033[0m"
+#echo -e "\033[42;34m 绿底蓝字 \033[0m"
+#echo -e "\033[43;34m 黄底蓝字 \033[0m"
+#echo -e "\033[44;30m 蓝底黑字 \033[0m"
+#echo -e "\033[45;30m 紫底黑字 \033[0m"
+#echo -e "\033[46;30m 天蓝底黑字 \033[0m"
+#echo -e "\033[47;34m 白底蓝字 \033[0m"
+#rm -rf gongju.sh
+#wget https://alist.yyzq.cf/d/%E6%9C%AC%E5%9C%B0%E7%BD%91%E7%9B%98/sh/gongju.sh &> /dev/null && chmod 777 ./gongju.sh &> /dev/null
+rm -rf ./gongju.sh.*
+rm -rf ./speedtest-cli
+read -p  " 请输入以上数字[0-22]查看系统相应信息: " num 
+if [  $num  == 1  ] ; then
+installgongj
+elif [  $num  == 2  ]; then
+chaipv4
+elif [  $num  == 3  ]; then
+cewangsu
+elif [  $num  == 4  ]; then
+installdocker
+elif [  $num  == 5 ]; then
+installbt
+elif [  $num  == 6 ]; then
+installbbr
+elif [  $num  == 7 ]; then
+xuiinstall
+elif [  $num  == 8 ]; then
+installssh
+elif [  $num  == 9 ]; then
+intoyun
+elif [  $num  == 10 ]; then
+qlPanel
+elif [  $num  == 11 ]; then
+installfrp
+elif [  $num  == 12 ]; then
+nezha
+elif [  $num  == 13 ]; then
+portone
+elif [  $num  == 14 ]; then
+installmysql
+elif [  $num  == 15 ]; then
+installumami
+elif [  $num  == 16 ]; then
+bench
+elif [  $num  == 17 ]; then
+ping
+elif [  $num  == 18 ]; then
+installopenvpn
+elif [  $num  == 19 ]; then
+installacme
+elif [  $num  == 20 ]; then
+installaria2
+elif [  $num  == 21 ]; then
+installnmap
+elif [  $num  == 22 ]; then
+xunjian
+elif [  $num  == 0  ]; then
+red " 我们下次再见，拜拜"
+exit
+else
+red "兄弟：请输入以上数字[0-22]: " 
+yellow "兄弟：请输入以上数字[0-22]: " 
+green "兄弟：请输入以上数字[0-22]: " 
+fi
+bash <(curl https://alist.yyzq.cf/d/%20%E6%9C%AC%E5%9C%B0%E7%BD%91%E7%9B%98/sh/gongju.sh)
