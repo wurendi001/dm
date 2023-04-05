@@ -1,7 +1,6 @@
 #!/bin/bash
 # xray一键安装脚本
 
-
 RED="\033[31m"      # Error message
 GREEN="\033[32m"    # Success message
 YELLOW="\033[33m"   # Warning message
@@ -15,11 +14,10 @@ http://www.xiaoshuosk.com/
 https://www.quledu.net/
 http://www.auutea.com/
 https://www.huanbige.com/
-https://hijk.art
-https://hijk.art
-https://hijk.art
-https://hijk.art
-https://hijk.art
+https://hijk.art/
+https://hijk.art/
+https://hijk.art/
+
 )
 
 CONFIG_FILE="/usr/local/etc/xray/config.json"
@@ -155,7 +153,7 @@ normalizeVersion() {
                 echo "$1"
             ;;
             http*)
-                echo "v1.0.0"
+                echo "v1.2.2"
             ;;
             *)
                 echo "v$1"
@@ -1762,8 +1760,8 @@ showLog() {
 menu() {
     clear
     echo "#############################################################"
-    echo -e "                     ${RED}Xray一键安装脚本${PLAIN}                      "
-  red   " 作者： (失落的梦)  " 
+    red "                     ${RED}Xray一键安装脚本${PLAIN}                      "
+       red " 作者： (失落的梦)  " 
     purple " 联系微信：Falltoher-1314 "
     purple " QQ:1150315739 "
     purple " 导航站：https://www.meng666.buzz "
@@ -1780,7 +1778,6 @@ menu() {
     echo -e "  ${GREEN}10.${PLAIN}  安装${BLUE}trojan+XTLS${PLAIN}${RED}${PLAIN}"
     echo " -------------"
     echo -e "  ${GREEN}12.  ${RED}卸载Xray${PLAIN}"
-    echo " -------------"
     echo -e "  ${GREEN}13.${PLAIN}  启动Xray"
     echo -e "  ${GREEN}14.${PLAIN}  重启Xray"
     echo -e "  ${GREEN}15.${PLAIN}  停止Xray"
@@ -1807,11 +1804,6 @@ menu() {
             ;;
         3)
             TLS="true"
-            install
-            ;;
-        4)
-            TLS="true"
-            WS="true"
             install
             ;;
         5)
