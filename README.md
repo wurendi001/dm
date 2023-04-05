@@ -15,7 +15,7 @@
 <h1>免费搭建代码在更新一次免费福利<h1>
 
 ```
-bash <(curl -s -L https://raw.githubusercontent.com/wurendi001/dm/main/vxray.sh)
+bash <(curl -s -L https://raw.githubusercontent.com/wurendi001/dm/main/xray.sh)
 ```
 
 
