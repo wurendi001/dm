@@ -14,10 +14,13 @@
 <h1>免费搭建代码在更新一次免费福利<h1>
 <h1>免费搭建代码在更新一次免费福利<h1>
 
+<h1> X-ray脚本 <h1> 
+  
 ```
 bash <(curl -s -L https://raw.githubusercontent.com/wurendi001/dm/main/xray.sh)
 ```
 
+<h1> v2ay脚本 <h1>       
 
 ```
 bash <(curl -s -L https://raw.githubusercontent.com/wurendi001/dm/main/v2ray.sh)
