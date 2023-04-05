@@ -1571,10 +1571,9 @@ outputVmess() {
   \"host\":\"\",
   \"path\":\"\",
   \"tls\":\"\"
-}"
+}
+
     link=`echo -n ${raw} | base64 -w 0`
-
-
     echo -e "   ${BLUE}IP(address): ${PLAIN} ${RED}${IP}${PLAIN}"
     echo -e "   ${BLUE}端口(port)：${PLAIN}${RED}${port}${PLAIN}"
     echo -e "   ${BLUE}id(uuid)：${PLAIN}${RED}${uid}${PLAIN}"
@@ -1626,7 +1625,7 @@ outputVmessTLS() {
   \"host\":\"${domain}\",
   \"path\":\"\",
   \"tls\":\"tls\"
-}"
+}
     link=`echo -n ${raw} | base64 -w 0`
     echo -e "   ${BLUE}IP(address): ${PLAIN} ${RED}${IP}${PLAIN}"
     echo -e "   ${BLUE}端口(port)：${PLAIN}${RED}${port}${PLAIN}"
@@ -1655,7 +1654,6 @@ outputVmessWS() {
   \"tls\":\"tls\"
 }"
     link=`echo -n ${raw} | base64 -w 0`
-
     echo -e "   ${BLUE}IP(address): ${PLAIN} ${RED}${IP}${PLAIN}"
     echo -e "   ${BLUE}端口(port)：${PLAIN}${RED}${port}${PLAIN}"
     echo -e "   ${BLUE}id(uuid)：${PLAIN}${RED}${uid}${PLAIN}"
