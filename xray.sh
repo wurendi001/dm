@@ -1764,12 +1764,12 @@ showLog() {
 menu() {
     clear
     echo "#############################################################"
-    cho -e "                     ${RED}Xray一键安装脚本${PLAIN}                      "
-    cho -e " 作者： (失落的梦)  " 
-    cho -e " 联系微信：Falltoher-1314 "
-    cho -e " QQ:1150315739 "
-    cho -e " 导航站：https://www.meng666.buzz "
-    cho -e " 博客1：https://www.kehu33.asia "
+     echo -e "                     ${RED}Xray一键安装脚本${PLAIN}                      "
+     echo -e " 作者： (失落的梦)  " 
+     echo -e " 联系微信：Falltoher-1314 "
+     echo -e " QQ:1150315739 "
+     echo -e " 导航站：https://www.meng666.buzz "
+     echo -e " 博客1：https://www.kehu33.asia "
     echo "#############################################################"
     echo -e "  ${GREEN}1.${PLAIN}   安装Xray-VMESS"
     echo -e "  ${GREEN}2.${PLAIN}   安装Xray-${BLUE}VMESS+mKCP${PLAIN}"
