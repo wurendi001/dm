@@ -1824,8 +1824,10 @@ menu() {
     echo "#############################################################"
     echo -e "#                   ${RED}v2ray一键安装脚本${PLAIN}                "
     echo -e "# ${GREEN}作者${PLAIN}: 失落的梦                                      "
-    purple " 联系微信：Falltoher-1314   QQ:1150315739  "
-    purple " 导航站：https://www.meng666.buzz  博客1：https://www.kehu33.asia "
+     echo -e " 联系微信：Falltoher-1314 "
+     echo -e " QQ:1150315739 "
+     echo -e " 导航站：https://www.meng666.buzz "
+     echo -e " 博客1：https://www.kehu33.asia "
     echo -e "#                                                           "	
     echo "#############################################################"
 
