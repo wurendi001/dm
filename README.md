@@ -8,14 +8,84 @@
 <p><a href="https://www.kehu33.asia/">[我的网站]</a></p>
 </p>
 
-<h1>通知：免费版代码最后一次维护以后只维护收费版，免费版有任何问题自行解决1>
-<h1>通知：免费版代码最后一次维护以后只维护收费版，免费版有任何问题自行解决1>
-<h1>通知；免费版代码最后一次维护以后只维护收费版，免费版有任何问题自行解决1>
-
 <h1>综合全部搭建代码：⬇️<h1>
 
+## V2ray
+
+【3】V2ray带伪装一键脚本CentOS版
+
+hostip修改版
 ```
-。。。。。。。。。。。
+bash <(curl -Ls https://raw.githubusercontent.com/wixfreto/hijkpw-scripts-mod/main/centos_install_v2ray2_mod1.sh)
+```
+
+hostip去除版
+```
+bash <(curl -Ls https://raw.githubusercontent.com/wixfreto/hijkpw-scripts-mod/main/centos_install_v2ray2_mod2.sh)
+```
+
+【4】V2ray带伪装一键脚本Ubuntu版
+
+hostip修改版
+```
+bash <(curl -Ls https://raw.githubusercontent.com/wixfreto/hijkpw-scripts-mod/main/ubuntu_install_v2ray2_mod1.sh)
+```
+
+hostip去除版
+```
+bash <(curl -Ls https://raw.githubusercontent.com/wixfreto/hijkpw-scripts-mod/main/ubuntu_install_v2ray2_mod2.sh)
+```
+
+【5】V2ray多合一脚本
+
+hostip修改版
+```
+bash <(curl -Ls https://raw.githubusercontent.com/wixfreto/hijkpw-scripts-mod/main/v2ray_mod1.sh)
+```
+
+hostip去除版
+```
+bash <(curl -Ls https://raw.githubusercontent.com/wixfreto/hijkpw-scripts-mod/main/v2ray_mod2.sh)
+```
+
+## Xray
+
+【1】Xray一键脚本
+
+hostip修改版
+```
+bash <(curl -Ls https://raw.githubusercontent.com/wixfreto/hijkpw-scripts-mod/main/xray_mod1.sh)
+```
+
+hostip去除版
+```
+bash <(curl -Ls https://raw.githubusercontent.com/wixfreto/hijkpw-scripts-mod/main/xray_mod2.sh)
+```
+
+## Trojan
+
+【1】Trojan一键脚本
+
+hostip修改版
+```
+bash <(curl -Ls https://raw.githubusercontent.com/wixfreto/hijkpw-scripts-mod/main/trojan_mod1.sh)
+```
+
+hostip去除版
+```
+bash <(curl -Ls https://raw.githubusercontent.com/wixfreto/hijkpw-scripts-mod/main/trojan_mod2.sh)
+```
+
+【2】Trojan-Go一键脚本
+
+hostip修改版
+```
+bash <(curl -Ls https://raw.githubusercontent.com/wixfreto/hijkpw-scripts-mod/main/trojan-go_mod1.sh)
+```
+
+hostip去除版
+```
+bash <(curl -Ls https://raw.githubusercontent.com/wixfreto/hijkpw-scripts-mod/main/trojan-go_mod2.sh)
 ```
 
 
