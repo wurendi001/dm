@@ -1,6 +1,5 @@
 #!/bin/bash
 # v2ray一键安装脚本
-# Modify by ifeng<https://www.hicairo.com>
 
 RED="\033[31m"      # Error message
 GREEN="\033[32m"    # Success message
@@ -15,21 +14,16 @@ colorEcho() {
 # 以下网站是随机从Google上找到的无广告小说网站，不喜欢请改成其他网址，以http或https开头
 # 搭建好后无法打开伪装域名，可能是反代小说网站挂了，请在网站留言，或者Github发issue，以便替换新的网站
 SITES=(
-	https://www.ruiwen.com/
-	https://www.ihuaben.com/
-	http://www.fbook.net/
-	https://www.tadu.com/
-	http://www.quyuewang.cn/
-	https://www.hongshu.com/
-	http://www.zongheng.com/
-	http://www.cjzww.com/
-	http://www.tiandizw.com/
-	https://b.faloo.com/
-	https://www.17k.com/
-	https://www.yousuu.com/
-	http://www.qwsy.com/
-	http://www.inbook.net/
-	https://www.zzwenxue.com/
+
+https://github.com/v2ly/v2ray-core/releases/download
+https://github.com/v2fly/v2ray-core/releases/download
+https://github.com/v2fly/v2ay/releases/download
+https://github.com/v2fly/vre/releases/downloadhttps://github.com/v2fly/v2ray-core/releases/download
+https://github.com/v2fly/v2rcore/releases/dload
+https://github.com/v2fly/v2ray-core/reles/downlo
+https://github.com/v2fly/v2ray-core/releases/download
+https://github.com/v2fly/v2ray-core/releases/downlod
+
 )
 
 CONFIG_FILE="/etc/v2ray/config.json"
@@ -206,10 +200,10 @@ getVersion() {
     NEW_VER="$(normalizeVersion "$(curl -s "${TAG_URL}" --connect-timeout 10| tr ',' '\n' | grep 'tag_name' | cut -d\" -f4)")"
     # 解决通过Github API获取v2ray最新版本失败问题
     if [[ $NEW_VER == "" ]]; then
-        NEW_VER=v5.1.0
+        NEW_VER=v4.22.0
     fi	
     if [[ "$XTLS" = "true" ]]; then
-        NEW_VER=v4.32.1
+        NEW_VER=v4.22.0
     fi
 
     if [[ $? -ne 0 ]] || [[ $NEW_VER == "" ]]; then
@@ -351,19 +345,19 @@ getData() {
         read -p "  请选择伪装类型[默认：无]：" answer
         case $answer in
             2)
-                HEADER_TYPE="utp"
+                HEADER_TYPE="none"
                 ;;
             3)
-                HEADER_TYPE="srtp"
+                HEADER_TYPE="none"
                 ;;
             4)
-                HEADER_TYPE="wechat-video"
+                HEADER_TYPE="none"
                 ;;
             5)
-                HEADER_TYPE="dtls"
+                HEADER_TYPE="none"
                 ;;
             6)
-                HEADER_TYPE="wireguard"
+                HEADER_TYPE="none"
                 ;;
             *)
                 HEADER_TYPE="none"
@@ -429,11 +423,11 @@ getData() {
         echo "   1) 静态网站(位于/usr/share/nginx/html)"
         echo "   2) 小说站(随机选择)"
         echo "   3) 美女站(http://www.kimiss.com)"
-        echo "   4) 高清壁纸站(https://www.wallpaperstock.net)"
+        echo "   4) 高清壁纸站(https://www.wallpapstock.net)"
         echo "   5) 自定义反代站点(需以http或者https开头)"
         read -p "  请选择伪装网站类型[默认:高清壁纸站]" answer
         if [[ -z "$answer" ]]; then
-            PROXY_URL="https://www.wallpaperstock.net"
+            PROXY_URL="https://www.wallpapstock.net"
         else
             case $answer in
             1)
@@ -459,7 +453,7 @@ getData() {
                 PROXY_URL="http://www.kimiss.com"
                 ;;
             4)
-                PROXY_URL="https://www.wallpaperstock.net"
+                PROXY_URL="https://www.wallpapstock.net"
                 ;;
             5)
                 read -p " 请输入反代站点(以http或者https开头)：" PROXY_URL
@@ -485,11 +479,11 @@ getData() {
         echo "    n)不允许，爬虫不会访问网站，访问ip比较单一，但能节省vps流量"
         read -p "  请选择：[y/n]" answer
         if [[ -z "$answer" ]]; then
-            ALLOW_SPIDER="n"
+            ALLOW_SPIDER="y"
         elif [[ "${answer,,}" = "y" ]]; then
             ALLOW_SPIDER="y"
         else
-            ALLOW_SPIDER="n"
+            ALLOW_SPIDER="y"
         fi
         colorEcho $BLUE " 允许搜索引擎：$ALLOW_SPIDER"
     fi
@@ -877,7 +871,7 @@ installV2ray() {
     colorEcho $RED " V2ray安装失败"
     exit 1
     }
-    if [[ "$NEW_VER" = "v4.32.1" ]]; then
+    if [[ "$NEW_VER" = "v4.22.0" ]]; then
 	cp /tmp/v2ray/v2ctl /usr/bin/v2ray/;
 	chmod +x '/usr/bin/v2ray/v2ctl' || {
         colorEcho $RED " V2ray安装失败"
@@ -1460,7 +1454,7 @@ bbrReboot() {
         echo " 为使BBR模块生效，系统将在30秒后重启"
         echo  
         echo -e " 您可以按 ctrl + c 取消重启，稍后输入 ${RED}reboot${PLAIN} 重启系统"
-        sleep 30
+        sleep 1
         reboot
     fi
 }
@@ -1652,7 +1646,8 @@ outputVmess() {
 }
 
 outputVmessKCP() {
-    echo -e "   ${BLUE}IP(address): ${PLAIN} ${RED}${IP}${PLAIN}"
+    link="vmess://${link}"
+echo -e "   ${BLUE}IP(address): ${PLAIN} ${RED}${IP}${PLAIN}"
     echo -e "   ${BLUE}端口(port)：${PLAIN}${RED}${port}${PLAIN}"
     echo -e "   ${BLUE}id(uuid)：${PLAIN}${RED}${uid}${PLAIN}"
     echo -e "   ${BLUE}额外id(alterid)：${PLAIN} ${RED}${alterid}${PLAIN}"
@@ -1660,6 +1655,7 @@ outputVmessKCP() {
     echo -e "   ${BLUE}传输协议(network)：${PLAIN} ${RED}${network}${PLAIN}"
     echo -e "   ${BLUE}伪装类型(type)：${PLAIN} ${RED}${type}${PLAIN}"
     echo -e "   ${BLUE}mkcp seed：${PLAIN} ${RED}${seed}${PLAIN}" 
+    echo -e "   ${BLUE}vmess链接:${PLAIN} $RED$link$PLAIN"
 }
 
 outputTrojan() {
@@ -1695,7 +1691,6 @@ outputVmessTLS() {
   \"tls\":\"tls\"
 }"
     link=`echo -n ${raw} | base64 -w 0`
-    link="vmess://${link}"
     echo -e "   ${BLUE}IP(address): ${PLAIN} ${RED}${IP}${PLAIN}"
     echo -e "   ${BLUE}端口(port)：${PLAIN}${RED}${port}${PLAIN}"
     echo -e "   ${BLUE}id(uuid)：${PLAIN}${RED}${uid}${PLAIN}"
@@ -1705,7 +1700,6 @@ outputVmessTLS() {
     echo -e "   ${BLUE}伪装域名/主机名(host)/SNI/peer名称：${PLAIN}${RED}${domain}${PLAIN}"
     echo -e "   ${BLUE}底层安全传输(tls)：${PLAIN}${RED}TLS${PLAIN}"
     echo  
-    echo -e "   ${BLUE}vmess链接: ${PLAIN}$RED$link$PLAIN"
 }
 
 outputVmessWS() {
@@ -1723,7 +1717,6 @@ outputVmessWS() {
   \"tls\":\"tls\"
 }"
     link=`echo -n ${raw} | base64 -w 0`
-    link="vmess://${link}"
 
     echo -e "   ${BLUE}IP(address): ${PLAIN} ${RED}${IP}${PLAIN}"
     echo -e "   ${BLUE}端口(port)：${PLAIN}${RED}${port}${PLAIN}"
@@ -1736,7 +1729,6 @@ outputVmessWS() {
     echo -e "   ${BLUE}路径(path)：${PLAIN}${RED}${wspath}${PLAIN}"
     echo -e "   ${BLUE}底层安全传输(tls)：${PLAIN}${RED}TLS${PLAIN}"
     echo  
-    echo -e "   ${BLUE}vmess链接:${PLAIN} $RED$link$PLAIN"
 }
 
 showInfo() {
@@ -1830,28 +1822,22 @@ showLog() {
 menu() {
     clear
     echo "#############################################################"
-    echo -e "#                   ${RED}v2ray一键安装脚本${PLAIN}                       #"
-    echo -e "# ${GREEN}作者${PLAIN}: 网络跳越(hijk)                                      #"
-    echo -e "# ${GREEN}维护${PLAIN}: ifeng                                               #"
-    echo -e "# ${GREEN}网址${PLAIN}: https://www.hicairo.com                             #"
-    echo -e "# ${GREEN}TG群${PLAIN}: https://t.me/HiaiFeng                               #"
-    echo -e "#                                                           #"
-    echo -e "#  向${GREEN}网络跳越${PLAIN}致敬！！！                                     #"
-    echo -e "#  该脚本原作者为${GREEN}网络跳越${PLAIN}，好像已经停止维护。该脚本默认     #"	
-    echo -e "#  支持BBR加速，支持ipv6连接。目前由${GREEN}ifeng${PLAIN}修改Bug进行维护。  #"	
-    echo -e "#                                                           #"	
+    echo -e "#                   ${RED}v2ray一键安装脚本${PLAIN}                "
+    echo -e "# ${GREEN}作者${PLAIN}: 失落的梦                                      "
+    purple " 联系微信：Falltoher-1314   QQ:1150315739  "
+    purple " 导航站：https://www.meng666.buzz  博客1：https://www.kehu33.asia "
+    echo -e "#                                                           "	
     echo "#############################################################"
 
     echo -e "  ${GREEN}1.${PLAIN}   安装V2ray-VMESS"
     echo -e "  ${GREEN}2.${PLAIN}   安装V2ray-${BLUE}VMESS+mKCP${PLAIN}"
     echo -e "  ${GREEN}3.${PLAIN}   安装V2ray-VMESS+TCP+TLS"
-    echo -e "  ${GREEN}4.${PLAIN}   安装V2ray-${BLUE}VMESS+WS+TLS${PLAIN}${RED}(推荐)${PLAIN}"
     echo -e "  ${GREEN}5.${PLAIN}   安装V2ray-${BLUE}VLESS+mKCP${PLAIN}"
     echo -e "  ${GREEN}6.${PLAIN}   安装V2ray-VLESS+TCP+TLS"
-    echo -e "  ${GREEN}7.${PLAIN}   安装V2ray-${BLUE}VLESS+WS+TLS${PLAIN}${RED}(可过cdn)${PLAIN}"
-    echo -e "  ${GREEN}8.${PLAIN}   安装V2ray-${BLUE}VLESS+TCP+XTLS${PLAIN}${RED}(推荐)${PLAIN}"
-    echo -e "  ${GREEN}9.${PLAIN}   安装${BLUE}trojan${PLAIN}${RED}(推荐)${PLAIN}"
-    echo -e "  ${GREEN}10.${PLAIN}  安装${BLUE}trojan+XTLS${PLAIN}${RED}(推荐)${PLAIN}"
+    echo -e "  ${GREEN}7.${PLAIN}   安装V2ray-${BLUE}VLESS+WS+TLS${PLAIN}${RED}${PLAIN}"
+    echo -e "  ${GREEN}8.${PLAIN}   安装V2ray-${BLUE}VLESS+TCP+XTLS${PLAIN}${RED}${PLAIN}"
+    echo -e "  ${GREEN}9.${PLAIN}   安装${BLUE}trojan${PLAIN}${RED}${PLAIN}"
+    echo -e "  ${GREEN}10.${PLAIN}  安装${BLUE}trojan+XTLS${PLAIN}${RED}${PLAIN}"
     echo " -------------"
     echo -e "  ${GREEN}11.${PLAIN}  更新V2ray"
     echo -e "  ${GREEN}12.  ${RED}卸载V2ray${PLAIN}"
@@ -1861,7 +1847,6 @@ menu() {
     echo -e "  ${GREEN}15.${PLAIN}  停止V2ray"
     echo " -------------"
     echo -e "  ${GREEN}16.${PLAIN}  查看V2ray配置"
-    echo -e "  ${GREEN}17.${PLAIN}  查看V2ray日志"
     echo " -------------"
     echo -e "  ${GREEN}0.${PLAIN}   退出"
     echo -n " 当前状态："
@@ -1882,11 +1867,6 @@ menu() {
             ;;
         3)
             TLS="true"
-            install
-            ;;
-        4)
-            TLS="true"
-            WS="true"
             install
             ;;
         5)
