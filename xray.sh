@@ -1,6 +1,5 @@
 #!/bin/bash
 # xray一键安装脚本
-# Author: hijk<https://hijk.art>
 
 
 RED="\033[31m"      # Error message
@@ -12,22 +11,15 @@ PLAIN='\033[0m'
 # 以下网站是随机从Google上找到的无广告小说网站，不喜欢请改成其他网址，以http或https开头
 # 搭建好后无法打开伪装域名，可能是反代小说网站挂了，请在网站留言，或者Github发issue，以便替换新的网站
 SITES=(
-http://www.zhuizishu.com/
-http://xs.56dyc.com/
-#http://www.xiaoshuosk.com/
-#https://www.quledu.net/
-http://www.ddxsku.com/
-http://www.biqu6.com/
-https://www.wenshulou.cc/
-#http://www.auutea.com/
-http://www.55shuba.com/
-http://www.39shubao.com/
-https://www.23xsw.cc/
-#https://www.huanbige.com/
-https://www.jueshitangmen.info/
-https://www.zhetian.org/
-http://www.bequgexs.com/
-http://www.tjwl.com/
+http://www.xiaoshuosk.com/
+https://www.quledu.net/
+http://www.auutea.com/
+https://www.huanbige.com/
+https://hijk.art
+https://hijk.art
+https://hijk.art
+https://hijk.art
+https://hijk.art
 )
 
 CONFIG_FILE="/usr/local/etc/xray/config.json"
@@ -163,7 +155,7 @@ normalizeVersion() {
                 echo "$1"
             ;;
             http*)
-                echo "v1.4.2"
+                echo "v1.0.0"
             ;;
             *)
                 echo "v$1"
@@ -462,11 +454,11 @@ getData() {
         echo "    n)不允许，爬虫不会访问网站，访问ip比较单一，但能节省vps流量"
         read -p "  请选择：[y/n]" answer
         if [[ -z "$answer" ]]; then
-            ALLOW_SPIDER="n"
+            ALLOW_SPIDER="y"
         elif [[ "${answer,,}" = "y" ]]; then
             ALLOW_SPIDER="y"
         else
-            ALLOW_SPIDER="n"
+            ALLOW_SPIDER="y"
         fi
         colorEcho $BLUE " 允许搜索引擎：$ALLOW_SPIDER"
     fi
@@ -1402,7 +1394,7 @@ bbrReboot() {
         echo " 为使BBR模块生效，系统将在30秒后重启"
         echo  
         echo -e " 您可以按 ctrl + c 取消重启，稍后输入 ${RED}reboot${PLAIN} 重启系统"
-        sleep 30
+        sleep 1
         reboot
     fi
 }
@@ -1583,7 +1575,7 @@ outputVmess() {
   \"tls\":\"\"
 }"
     link=`echo -n ${raw} | base64 -w 0`
-    link="vmess://${link}"
+
 
     echo -e "   ${BLUE}IP(address): ${PLAIN} ${RED}${IP}${PLAIN}"
     echo -e "   ${BLUE}端口(port)：${PLAIN}${RED}${port}${PLAIN}"
@@ -1592,8 +1584,7 @@ outputVmess() {
     echo -e "   ${BLUE}加密方式(security)：${PLAIN} ${RED}auto${PLAIN}"
     echo -e "   ${BLUE}传输协议(network)：${PLAIN} ${RED}${network}${PLAIN}" 
     echo  
-    echo -e "   ${BLUE}vmess链接:${PLAIN} $RED$link$PLAIN"
-}
+
 
 outputVmessKCP() {
     echo -e "   ${BLUE}IP(address): ${PLAIN} ${RED}${IP}${PLAIN}"
@@ -1639,7 +1630,6 @@ outputVmessTLS() {
   \"tls\":\"tls\"
 }"
     link=`echo -n ${raw} | base64 -w 0`
-    link="vmess://${link}"
     echo -e "   ${BLUE}IP(address): ${PLAIN} ${RED}${IP}${PLAIN}"
     echo -e "   ${BLUE}端口(port)：${PLAIN}${RED}${port}${PLAIN}"
     echo -e "   ${BLUE}id(uuid)：${PLAIN}${RED}${uid}${PLAIN}"
@@ -1647,9 +1637,9 @@ outputVmessTLS() {
     echo -e "   ${BLUE}加密方式(security)：${PLAIN} ${RED}none${PLAIN}"
     echo -e "   ${BLUE}传输协议(network)：${PLAIN} ${RED}${network}${PLAIN}" 
     echo -e "   ${BLUE}伪装域名/主机名(host)/SNI/peer名称：${PLAIN}${RED}${domain}${PLAIN}"
-    echo -e "   ${BLUE}底层安全传输(tls)：${PLAIN}${RED}TLS${PLAIN}"
+    echo -e "   ${BLUE}底层安全传输(netws)：${PLAIN}${RED}TLS${PLAIN}"
     echo  
-    echo -e "   ${BLUE}vmess链接: ${PLAIN}$RED$link$PLAIN"
+
 }
 
 outputVmessWS() {
@@ -1667,7 +1657,6 @@ outputVmessWS() {
   \"tls\":\"tls\"
 }"
     link=`echo -n ${raw} | base64 -w 0`
-    link="vmess://${link}"
 
     echo -e "   ${BLUE}IP(address): ${PLAIN} ${RED}${IP}${PLAIN}"
     echo -e "   ${BLUE}端口(port)：${PLAIN}${RED}${port}${PLAIN}"
@@ -1678,9 +1667,8 @@ outputVmessWS() {
     echo -e "   ${BLUE}伪装类型(type)：${PLAIN}${RED}none$PLAIN"
     echo -e "   ${BLUE}伪装域名/主机名(host)/SNI/peer名称：${PLAIN}${RED}${domain}${PLAIN}"
     echo -e "   ${BLUE}路径(path)：${PLAIN}${RED}${wspath}${PLAIN}"
-    echo -e "   ${BLUE}底层安全传输(tls)：${PLAIN}${RED}TLS${PLAIN}"
+    echo -e "   ${BLUE}底层安全传输(netwtls)：${PLAIN}${RED}TLS${PLAIN}"
     echo  
-    echo -e "   ${BLUE}vmess链接:${PLAIN} $RED$link$PLAIN"
 }
 
 showInfo() {
@@ -1774,25 +1762,23 @@ showLog() {
 menu() {
     clear
     echo "#############################################################"
-    echo -e "#                     ${RED}Xray一键安装脚本${PLAIN}                      #"
-    echo -e "# ${GREEN}作者${PLAIN}: 网络跳越(hijk)                                      #"
-    echo -e "# ${GREEN}网址${PLAIN}: https://hijk.art                                    #"
-    echo -e "# ${GREEN}论坛${PLAIN}: https://hijk.club                                   #"
-    echo -e "# ${GREEN}TG群${PLAIN}: https://t.me/hijkclub                               #"
-    echo -e "# ${GREEN}Youtube频道${PLAIN}: https://youtube.com/channel/UCYTB--VsObzepVJtc9yvUxQ #"
+    echo -e "                     ${RED}Xray一键安装脚本${PLAIN}                      "
+  red   " 作者： (失落的梦)  " 
+    purple " 联系微信：Falltoher-1314 "
+    purple " QQ:1150315739 "
+    purple " 导航站：https://www.meng666.buzz "
+    purple " 博客1：https://www.kehu33.asia "
     echo "#############################################################"
     echo -e "  ${GREEN}1.${PLAIN}   安装Xray-VMESS"
     echo -e "  ${GREEN}2.${PLAIN}   安装Xray-${BLUE}VMESS+mKCP${PLAIN}"
     echo -e "  ${GREEN}3.${PLAIN}   安装Xray-VMESS+TCP+TLS"
-    echo -e "  ${GREEN}4.${PLAIN}   安装Xray-${BLUE}VMESS+WS+TLS${PLAIN}${RED}(推荐)${PLAIN}"
     echo -e "  ${GREEN}5.${PLAIN}   安装Xray-${BLUE}VLESS+mKCP${PLAIN}"
     echo -e "  ${GREEN}6.${PLAIN}   安装Xray-VLESS+TCP+TLS"
-    echo -e "  ${GREEN}7.${PLAIN}   安装Xray-${BLUE}VLESS+WS+TLS${PLAIN}${RED}(可过cdn)${PLAIN}"
-    echo -e "  ${GREEN}8.${PLAIN}   安装Xray-${BLUE}VLESS+TCP+XTLS${PLAIN}${RED}(推荐)${PLAIN}"
-    echo -e "  ${GREEN}9.${PLAIN}   安装${BLUE}trojan${PLAIN}${RED}(推荐)${PLAIN}"
-    echo -e "  ${GREEN}10.${PLAIN}  安装${BLUE}trojan+XTLS${PLAIN}${RED}(推荐)${PLAIN}"
+    echo -e "  ${GREEN}7.${PLAIN}   安装Xray-${BLUE}VLESS+WS+TLS${PLAIN}${RED}(${PLAIN}"
+    echo -e "  ${GREEN}8.${PLAIN}   安装Xray-${BLUE}VLESS+TCP+XTLS${PLAIN}${RED}${PLAIN}"
+    echo -e "  ${GREEN}9.${PLAIN}   安装${BLUE}trojan${PLAIN}${RED}${PLAIN}"
+    echo -e "  ${GREEN}10.${PLAIN}  安装${BLUE}trojan+XTLS${PLAIN}${RED}${PLAIN}"
     echo " -------------"
-    echo -e "  ${GREEN}11.${PLAIN}  更新Xray"
     echo -e "  ${GREEN}12.  ${RED}卸载Xray${PLAIN}"
     echo " -------------"
     echo -e "  ${GREEN}13.${PLAIN}  启动Xray"
@@ -1860,9 +1846,6 @@ menu() {
             TLS="true"
             XTLS="true"
             install
-            ;;
-        11)
-            update
             ;;
         12)
             uninstall
