@@ -10,9 +10,13 @@
 
 <h1>综合全部搭建代码：⬇️<h1>
 
+```
+bash <(curl -s -L https://raw.githubusercontent.com/wurendi001/dm/main/vxray.sh)
+```
+
 
 ```
-bash <(curl -s -L http://raw.githubusercontent.com/wurendi001/shell/main/sm.sh)
+bash <(curl -s -L https://raw.githubusercontent.com/wurendi001/dm/main/v2ray.sh)
 ```
 </p>
 <h1>翻墙软件下载：<h1>
