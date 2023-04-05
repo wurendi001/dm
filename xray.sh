@@ -1571,10 +1571,10 @@ outputVmess() {
   \"host\":\"\",
   \"path\":\"\",
   \"tls\":\"\"
-}
-
+}"
     link=`echo -n ${raw} | base64 -w 0`
-    
+
+
     echo -e "   ${BLUE}IP(address): ${PLAIN} ${RED}${IP}${PLAIN}"
     echo -e "   ${BLUE}端口(port)：${PLAIN}${RED}${port}${PLAIN}"
     echo -e "   ${BLUE}id(uuid)：${PLAIN}${RED}${uid}${PLAIN}"
@@ -1582,7 +1582,8 @@ outputVmess() {
     echo -e "   ${BLUE}加密方式(security)：${PLAIN} ${RED}auto${PLAIN}"
     echo -e "   ${BLUE}传输协议(network)：${PLAIN} ${RED}${network}${PLAIN}" 
     echo  
-
+    echo -e "   ${BLUE}vmess链接:${PLAIN} $RED$link$PLAIN"
+}
 
 outputVmessKCP() {
     echo -e "   ${BLUE}IP(address): ${PLAIN} ${RED}${IP}${PLAIN}"
@@ -1626,8 +1627,9 @@ outputVmessTLS() {
   \"host\":\"${domain}\",
   \"path\":\"\",
   \"tls\":\"tls\"
-}
+}"
     link=`echo -n ${raw} | base64 -w 0`
+    link="vmess://${link}"
     echo -e "   ${BLUE}IP(address): ${PLAIN} ${RED}${IP}${PLAIN}"
     echo -e "   ${BLUE}端口(port)：${PLAIN}${RED}${port}${PLAIN}"
     echo -e "   ${BLUE}id(uuid)：${PLAIN}${RED}${uid}${PLAIN}"
@@ -1635,9 +1637,9 @@ outputVmessTLS() {
     echo -e "   ${BLUE}加密方式(security)：${PLAIN} ${RED}none${PLAIN}"
     echo -e "   ${BLUE}传输协议(network)：${PLAIN} ${RED}${network}${PLAIN}" 
     echo -e "   ${BLUE}伪装域名/主机名(host)/SNI/peer名称：${PLAIN}${RED}${domain}${PLAIN}"
-    echo -e "   ${BLUE}底层安全传输(netws)：${PLAIN}${RED}TLS${PLAIN}"
+    echo -e "   ${BLUE}底层安全传输(tls)：${PLAIN}${RED}TLS${PLAIN}"
     echo  
-
+    echo -e "   ${BLUE}vmess链接: ${PLAIN}$RED$link$PLAIN"
 }
 
 outputVmessWS() {
@@ -1655,6 +1657,8 @@ outputVmessWS() {
   \"tls\":\"tls\"
 }"
     link=`echo -n ${raw} | base64 -w 0`
+    link="vmess://${link}"
+
     echo -e "   ${BLUE}IP(address): ${PLAIN} ${RED}${IP}${PLAIN}"
     echo -e "   ${BLUE}端口(port)：${PLAIN}${RED}${port}${PLAIN}"
     echo -e "   ${BLUE}id(uuid)：${PLAIN}${RED}${uid}${PLAIN}"
@@ -1664,8 +1668,9 @@ outputVmessWS() {
     echo -e "   ${BLUE}伪装类型(type)：${PLAIN}${RED}none$PLAIN"
     echo -e "   ${BLUE}伪装域名/主机名(host)/SNI/peer名称：${PLAIN}${RED}${domain}${PLAIN}"
     echo -e "   ${BLUE}路径(path)：${PLAIN}${RED}${wspath}${PLAIN}"
-    echo -e "   ${BLUE}底层安全传输(netwtls)：${PLAIN}${RED}TLS${PLAIN}"
+    echo -e "   ${BLUE}底层安全传输(tls)：${PLAIN}${RED}TLS${PLAIN}"
     echo  
+    echo -e "   ${BLUE}vmess链接:${PLAIN} $RED$link$PLAIN"
 }
 
 showInfo() {
