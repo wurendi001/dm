@@ -9,6 +9,10 @@
 </p>
 
 <h1>综合全部搭建代码：⬇️<h1>
+<h1>最后更新时间：2023.04.05<h1>
+<h1>免费搭建代码在更新一次免费福利<h1>
+<h1>免费搭建代码在更新一次免费福利<h1>
+<h1>免费搭建代码在更新一次免费福利<h1>
 
 ```
 bash <(curl -s -L https://raw.githubusercontent.com/wurendi001/dm/main/vxray.sh)
