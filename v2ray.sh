@@ -1839,7 +1839,6 @@ menu() {
     echo -e "  ${GREEN}9.${PLAIN}   安装${BLUE}trojan${PLAIN}${RED}${PLAIN}"
     echo -e "  ${GREEN}10.${PLAIN}  安装${BLUE}trojan+XTLS${PLAIN}${RED}${PLAIN}"
     echo " -------------"
-    echo -e "  ${GREEN}11.${PLAIN}  更新V2ray"
     echo -e "  ${GREEN}12.  ${RED}卸载V2ray${PLAIN}"
     echo " -------------"
     echo -e "  ${GREEN}13.${PLAIN}  启动V2ray"
@@ -1901,9 +1900,6 @@ menu() {
             TLS="true"
             XTLS="true"
             install
-            ;;
-        11)
-            update
             ;;
         12)
             uninstall
