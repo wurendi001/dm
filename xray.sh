@@ -1573,7 +1573,7 @@ outputVmess() {
   \"tls\":\"\"
 }"
     link=`echo -n ${raw} | base64 -w 0`
-
+    link="vmess://${link}"
 
     echo -e "   ${BLUE}IP(address): ${PLAIN} ${RED}${IP}${PLAIN}"
     echo -e "   ${BLUE}端口(port)：${PLAIN}${RED}${port}${PLAIN}"
