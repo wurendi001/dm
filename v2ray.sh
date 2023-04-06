@@ -1945,7 +1945,7 @@ echo "#############################################################"
 checkSystem
 clean_env
 action=$1
-[[ -z $1 ]] && action=menu
+[[ -z $1 ]] && action=menu && clean_env
 case "$action" in
     menu|update|clean_env|uninstall|start|restart|stop|showInfo|showLog)
         ${action}
