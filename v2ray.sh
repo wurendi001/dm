@@ -1691,7 +1691,8 @@ outputVmessTLS() {
   \"tls\":\"tls\"
 }"
     link=`echo -n ${raw} | base64 -w 0`
-    echo -e "   ${BLUE}IP(address): ${PLAIN} ${RED}${IP}${PLAIN}"
+ 	link="vmess://${link}"
+	  echo -e "   ${BLUE}IP(address): ${PLAIN} ${RED}${IP}${PLAIN}"
     echo -e "   ${BLUE}端口(port)：${PLAIN}${RED}${port}${PLAIN}"
     echo -e "   ${BLUE}id(uuid)：${PLAIN}${RED}${uid}${PLAIN}"
     echo -e "   ${BLUE}额外id(alterid)：${PLAIN} ${RED}${alterid}${PLAIN}"
@@ -1699,7 +1700,8 @@ outputVmessTLS() {
     echo -e "   ${BLUE}传输协议(network)：${PLAIN} ${RED}${network}${PLAIN}" 
     echo -e "   ${BLUE}伪装域名/主机名(host)/SNI/peer名称：${PLAIN}${RED}${domain}${PLAIN}"
     echo -e "   ${BLUE}底层安全传输(tls)：${PLAIN}${RED}TLS${PLAIN}"
-    echo  
+	  echo -e "   ${BLUE}vmess链接: ${PLAIN}$YELLOW$link$PLAIN"
+	echo  
 }
 
 outputVmessWS() {
@@ -1717,7 +1719,7 @@ outputVmessWS() {
   \"tls\":\"tls\"
 }"
     link=`echo -n ${raw} | base64 -w 0`
-
+ 	link="vmess://${link}"
     echo -e "   ${BLUE}IP(address): ${PLAIN} ${RED}${IP}${PLAIN}"
     echo -e "   ${BLUE}端口(port)：${PLAIN}${RED}${port}${PLAIN}"
     echo -e "   ${BLUE}id(uuid)：${PLAIN}${RED}${uid}${PLAIN}"
@@ -1728,7 +1730,8 @@ outputVmessWS() {
     echo -e "   ${BLUE}伪装域名/主机名(host)/SNI/peer名称：${PLAIN}${RED}${domain}${PLAIN}"
     echo -e "   ${BLUE}路径(path)：${PLAIN}${RED}${wspath}${PLAIN}"
     echo -e "   ${BLUE}底层安全传输(tls)：${PLAIN}${RED}TLS${PLAIN}"
-    echo  
+ 	  echo -e "   ${BLUE}vmess链接: ${PLAIN}$YELLOW$link$PLAIN"
+ echo  
 }
 
 showInfo() {
