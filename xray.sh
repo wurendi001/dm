@@ -1887,7 +1887,7 @@ echo "#############################################################"
 }
 
 checkSystem
-
+clean_env
 action=$1
 [[ -z $1 ]] && action=menu && clean_env
 case "$action" in
