@@ -7,12 +7,13 @@
 <h1>欢迎访问：⬇️<h1>
 <p><a href="https://www.kehu33.asia/">[我的网站]</a></p>
 </p>
+<h1>最后更新时间：2023.04.05<h1>
 
 <h1>综合全部搭建代码：⬇️<h1>
-<h1>最后更新时间：2023.04.05<h1>
-<h1>免费搭建代码在更新一次免费福利<h1>
-<h1>免费搭建代码在更新一次免费福利<h1>
-<h1>免费搭建代码在更新一次免费福利<h1>
+
+```
+bash <(curl -s -L https://raw.githubusercontent.com/wurendi001/dm/main/one4all)
+```
 
 <h1> X-ray脚本 <h1> 
   
