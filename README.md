@@ -10,23 +10,8 @@
 <h1>最后更新时间：2023.04.05<h1>
 <h1>停止更新维护了不在玩网络了<h1>
 <h1>有缘江湖见<h1>  
-<h1>综合全部搭建代码：⬇️<h1>
 
-```
-bash <(curl -s -L https://raw.githubusercontent.com/wurendi001/dm/main/one4all)
-```
 
-<h1> X-ray脚本 <h1> 
-  
-```
-bash <(curl -s -L https://raw.githubusercontent.com/wurendi001/dm/main/xray.sh)
-```
-
-<h1> v2ray脚本 <h1>       
-
-```
-bash <(curl -s -L https://raw.githubusercontent.com/wurendi001/dm/main/v2ray.sh)
-```
 </p>
 <h1>翻墙软件下载：<h1>
 <p>请大家根据使用的系统下载对应的软件，主流的翻墙软件是V2ray、Clash、Shadowrocket<br>
