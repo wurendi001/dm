@@ -18,7 +18,6 @@
 </p>
 <h2>Windows软件下载</h2>
 <p><a href="https://github.com/wurendi001/dm/releases/latest" target="_blank">新版v2rayN-With-Core 6.21版软件下载：v2rayN-With-Core.zip </a></p>
-<p><a href="https://github.com/2dust/v2rayN/releases/latest" target="_blank">v2rayN 5.39版软件下载：v2rayN-Core.zip</a></p>
 <p><a href="https://github.com/shadowsocksrr/shadowsocksr-csharp/releases" target="_blank">SSR软件下载：ShadowsocksR-win-4.9.2.zip</a></p >
 <br>
 <h2>安卓APP下载</h2>
