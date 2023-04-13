@@ -17,7 +17,7 @@
 <p>请大家根据使用的系统下载对应的软件，主流的翻墙软件是V2ray、Clash、Shadowrocket<br>
 </p>
 <h2>Windows软件下载</h2>
-<p><a href="https://github.com/wurendi001/dm/releases/latest" target="_blank">新版v2rayN-With-Core 6.11版软件下载：v2rayN-With-Core 6.11版.zip </a></p>
+<p><a href="https://github.com/wurendi001/dm/releases/latest" target="_blank">新版v2rayN-With-Core 6.21版软件下载：v2rayN-With-Core 6.21版.zip </a></p>
 <p><a href="https://github.com/2dust/v2rayN/releases/latest" target="_blank">v2rayN 5.39版软件下载：v2rayN-Core.zip</a></p>
 <p><a href="https://github.com/shadowsocksrr/shadowsocksr-csharp/releases" target="_blank">SSR软件下载：ShadowsocksR-win-4.9.2.zip</a></p >
 <br>
