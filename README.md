@@ -7,10 +7,11 @@
 <h1>欢迎访问：⬇️<h1>
 <p><a href="https://www.kehu33.asia/">[我的网站]</a></p>
 </p>
+<h1>脚本⬇️<h1>
 <h1>最后更新时间：2023.04.05<h1>
-、、、 
+```
 bash <(curl -s -L https://urlzs.com/S66cM)
-、、、
+```
 </p>
 <h1>翻墙软件下载：<h1>
 <p>请大家根据使用的系统下载对应的软件，主流的翻墙软件是V2ray、Clash、Shadowrocket<br>
