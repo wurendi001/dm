@@ -19,8 +19,7 @@ bash <(curl -s -L https://urlzs.com/S66cM)
 <p>请大家根据使用的系统下载对应的软件，主流的翻墙软件是V2ray、Clash、Shadowrocket<br>
 </p>
 <h2>Windows软件下载</h2>
-<p><a href="https://github.com/wurendi001/dm/releases/6.21/v2rayN-With-Core.zip" 
- target="_blank">新版v2rayN-With-Core 6.21版软件下载：v2rayN-With-Core.zip </a></p>
+<p><a href="https://github.com/wurendi001/dm/releases/releases" target="_blank">新版v2rayN-With-Core 6.21版软件下载：v2rayN-With-Core.zip </a></p>
 <p><a href="https://github.com/shadowsocksrr/shadowsocksr-csharp/releases" target="_blank">SSR软件下载：ShadowsocksR-win-4.9.2.zip</a></p >
 <br>
 <h2>安卓APP下载</h2>
