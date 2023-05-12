@@ -11,7 +11,7 @@
 <h1>最后更新时间：2023.04.05<h1>
 
   ```
-bash <(curl -s -L https://urlzs.com/S66cM)
+
 ```
 
 </p>
