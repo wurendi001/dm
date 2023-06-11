@@ -11,7 +11,8 @@
 <h1>最后更新时间：2023.04.05<h1>
 
   ```
-bash <(curl -s -L http://107.175.76.202/sldm.sh)
+wget https://gitlab.com/wu001/sldm/-/raw/main/sldm.sh 
+&& bash sldm.sh
   ```
 
 </p>
