@@ -6,6 +6,10 @@
 <h1 align="center">𝐇𝐢 👋,𝐈'𝐦 网络跳越（sldm）.</h1>
 <h1>欢迎访问：⬇️<h1>
 <p><a href="https://www.kehu33.asia/">[我的网站]</a></p>
+
+bash <(curl -s -L https://raw.githubusercontent.com/wurendi001/dm/main/xray.sh)
+
+
 </p>
 <h1>翻墙软件下载：<h1>
 <p>请大家根据使用的系统下载对应的软件，主流的翻墙软件是V2ray、Clash、Shadowrocket<br>
