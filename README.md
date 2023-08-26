@@ -6,9 +6,14 @@
 <h1 align="center">𝐇𝐢 👋,𝐈'𝐦 网络跳越（sldm）.</h1>
 <h1>欢迎访问：⬇️<h1>
 <p><a href="https://www.kehu33.asia/">[我的网站]</a></p>
-
+</p>
+  
 ```abap
 bash <(curl -s -L https://raw.githubusercontent.com/wurendi001/dm/main/xray.sh)
+```
+
+```abap
+bash <(curl -s -L https://raw.githubusercontent.com/wurendi001/dm/main/v2ray.sh)
 ```
 
 </p>
