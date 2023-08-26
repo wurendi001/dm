@@ -7,8 +7,9 @@
 <h1>欢迎访问：⬇️<h1>
 <p><a href="https://www.kehu33.asia/">[我的网站]</a></p>
 
+、、、
 bash <(curl -s -L https://raw.githubusercontent.com/wurendi001/dm/main/xray.sh)
-
+、、、
 
 </p>
 <h1>翻墙软件下载：<h1>
