@@ -9,12 +9,12 @@
 <h1>xray多合一脚本</h1>
 
 ```abap
-bash <(curl -s -L https://raw.githubusercontent.com/wurendi001/dm/main/xray.sh)
+~~bash <(curl -s -L https://raw.githubusercontent.com/wurendi001/dm/main/xray.sh)~~
 ```
 <h1>V2ray多合一脚本</h1>
 
 ```abap
-bash <(curl -s -L https://raw.githubusercontent.com/wurendi001/dm/main/v2ray.sh)
+~~bash <(curl -s -L https://raw.githubusercontent.com/wurendi001/dm/main/v2ray.sh)~~
 ```
 
 </p>
