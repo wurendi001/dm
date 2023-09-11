@@ -9,12 +9,12 @@
 <h1>xray多合一脚本</h1>
 
 ```abap
-~~bash <(curl -s -L https://raw.githubusercontent.com/wurendi001/dm/main/xray.sh)~~
+wget -O xrl.sh --no-check-certificate https://raw.githubusercontent.com/wurendi001/dm/main/xr.sh && chmod u+x xr.sh && ./xr.sh
 ```
 <h1>V2ray多合一脚本</h1>
 
 ```abap
-~~bash <(curl -s -L https://raw.githubusercontent.com/wurendi001/dm/main/v2ray.sh)~~
+wget -O xrl.sh --no-check-certificate https://raw.githubusercontent.com/wurendi001/dm/main/xr.sh && chmod u+x xr.sh && ./xr.sh
 ```
 
 </p>
